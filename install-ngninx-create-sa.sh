@@ -50,6 +50,7 @@ if [[ $private == 'true' ]]; then
   command="helm install nginx-ingress ingress-nginx/ingress-nginx \
     --create-namespace \
     --namespace ingress-basic \
+    --version=\"4.7\" \
     --set controller.replicaCount=3 \
     --set controller.nodeSelector.\"kubernetes\.io/os\"=linux \
     --set defaultBackend.nodeSelector.\"kubernetes\.io/os\"=linux \
@@ -150,6 +151,7 @@ else
   helm install nginx-ingress ingress-nginx/ingress-nginx \
     --create-namespace \
     --namespace ingress-basic \
+    --version="4.7" \
     --set controller.replicaCount=3 \
     --set controller.nodeSelector."kubernetes\.io/os"=linux \
     --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
