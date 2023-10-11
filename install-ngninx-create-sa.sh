@@ -53,6 +53,7 @@ if [[ $private == 'true' ]]; then
     --set controller.replicaCount=3 \
     --set controller.nodeSelector.\"kubernetes\.io/os\"=linux \
     --set defaultBackend.nodeSelector.\"kubernetes\.io/os\"=linux \
+    --set controller.enableSnippets=true \
     --set controller.metrics.enabled=true \
     --set controller.metrics.serviceMonitor.enabled=true \
     --set controller.metrics.serviceMonitor.additionalLabels.release=\"prometheus\" \
@@ -154,6 +155,7 @@ else
     --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
     --set controller.metrics.enabled=true \
     --set controller.metrics.serviceMonitor.enabled=true \
+    --set controller.enableSnippets=true \
     --set controller.metrics.serviceMonitor.additionalLabels.release="prometheus" \
     --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
 
